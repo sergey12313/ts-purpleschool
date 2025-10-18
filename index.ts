@@ -1,2 +1,1 @@
-console.log("Hello via Bun!");
-let x = 12;
+// console.log("Hello via Bun!");
