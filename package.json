@@ -1,0 +1,14 @@
+{
+  "name": "ts-purpleschool",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@antfu/eslint-config": "^6.0.0",
+    "eslint": "^9.38.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}
