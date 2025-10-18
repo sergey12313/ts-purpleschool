@@ -1,14 +1,6 @@
-function makeOrdinal(n: number): string {
-  const s = ['th', 'st', 'nd', 'rd']
-  const v = n % 100
-  return n + ((s[(v - 20) % 10] || s[v] || s[0]) as string)
-}
-function isFinite(number: unknown): boolean {
-  return Number.isFinite(number)
-}
-function isSafeNumber(number: unknown): boolean {
-  return Number.isSafeInteger(number)
-}
+import { isFinite } from './is-finite'
+import { isSafeNumber } from './is-safe-number'
+import { makeOrdinal } from './make-ordinal'
 
 const LESS_THAN_TWENTY = [
   'zero',
@@ -68,7 +60,7 @@ export function toWords(input: string | number, asOrdinal: boolean = false): str
     )
   }
   const words = generateWords(num)
-  return asOrdinal ? `${words}  ${makeOrdinal(num)}` : words
+  return asOrdinal ? makeOrdinal(words) : words
 }
 
 function generateWords(num: number, words: Array<string> = []): string {
